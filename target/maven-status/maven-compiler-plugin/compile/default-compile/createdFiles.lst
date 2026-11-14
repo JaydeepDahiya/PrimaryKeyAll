@@ -1,0 +1,6 @@
+com\jaydeepdahiya\flyway\DbClean.class
+com\jaydeepdahiya\entity\composite\CompositeId.class
+com\jaydeepdahiya\audit\AuditorAwareImpl.class
+com\jaydeepdahiya\repository\ContactCompositeEmbeddedRepository.class
+com\jaydeepdahiya\entity\BaseEntity.class
+com\jaydeepdahiya\PrimaryKeyAllApplication.class

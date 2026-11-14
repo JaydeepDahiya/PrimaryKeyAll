@@ -1,0 +1,558 @@
+{
+  "info": {
+    "_postman_id": "b62dc5c4-5c45-4df5-b8cb-91d715d930e9",
+    "name": "PrimaryKeyAll REST API tests",
+    "description": "CRUD smoke tests for all Spring Data REST repositories. Run against a disposable test database; the collection creates and deletes one record per endpoint.\n\nAuthor: Jaydeep Dahiya",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "lifecycleExpectedField",
+      "value": ""
+    },
+    {
+      "key": "lifecycleExpectedValue",
+      "value": ""
+    },
+    {
+      "key": "lifecyclePatchField",
+      "value": ""
+    },
+    {
+      "key": "lifecyclePatchValue",
+      "value": "Updated by Postman"
+    },
+    {
+      "key": "lifecycleItemUrl",
+      "value": ""
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.collectionVariables.unset('lifecycleItemUrl');",
+          "pm.test('POST creates a resource', function () {",
+          "    pm.response.to.have.status(201);",
+          "    const created = pm.response.json();",
+          "    const self = created && created._links && created._links.self;",
+          "    pm.expect(self && self.href, 'HAL self link').to.be.a('string');",
+          "    pm.expect(created[pm.collectionVariables.get('lifecycleExpectedField')]).to.eql(pm.collectionVariables.get('lifecycleExpectedValue'));",
+          "});",
+          "",
+          "const created = pm.response.json();",
+          "const self = created && created._links && created._links.self;",
+          "const itemUrl = self && self.href;",
+          "if (itemUrl) {",
+          "    pm.collectionVariables.set('lifecycleItemUrl', itemUrl);",
+          "    const expectedField = pm.collectionVariables.get('lifecycleExpectedField');",
+          "    const expectedValue = pm.collectionVariables.get('lifecycleExpectedValue');",
+          "    const patchField = pm.collectionVariables.get('lifecyclePatchField');",
+          "    const patchValue = pm.collectionVariables.get('lifecyclePatchValue');",
+          "    const headers = { Accept: 'application/hal+json' };",
+          "",
+          "    pm.sendRequest({ url: itemUrl, method: 'GET', header: headers }, function (getError, getResponse) {",
+          "        pm.test('GET retrieves the created resource', function () {",
+          "            pm.expect(getError).to.eql(null);",
+          "            if (!getError) {",
+          "                pm.expect(getResponse.code).to.eql(200);",
+          "                pm.expect(getResponse.json()[expectedField]).to.eql(expectedValue);",
+          "            }",
+          "        });",
+          "        if (getError || !getResponse || getResponse.code !== 200) return;",
+          "",
+          "        pm.sendRequest({",
+          "            url: itemUrl,",
+          "            method: 'PATCH',",
+          "            header: { Accept: 'application/hal+json', 'Content-Type': 'application/merge-patch+json' },",
+          "            body: { mode: 'raw', raw: JSON.stringify({ [patchField]: patchValue }) }",
+          "        }, function (patchError, patchResponse) {",
+          "            pm.test('PATCH updates the resource', function () {",
+          "                pm.expect(patchError).to.eql(null);",
+          "                if (!patchError) pm.expect(patchResponse.code).to.eql(200);",
+          "            });",
+          "            if (patchError || !patchResponse || patchResponse.code !== 200) return;",
+          "",
+          "            pm.sendRequest({ url: itemUrl, method: 'GET', header: headers }, function (updatedError, updatedResponse) {",
+          "                pm.test('GET returns the updated resource', function () {",
+          "                    pm.expect(updatedError).to.eql(null);",
+          "                    if (!updatedError) {",
+          "                        pm.expect(updatedResponse.code).to.eql(200);",
+          "                        pm.expect(updatedResponse.json()[patchField]).to.eql(patchValue);",
+          "                    }",
+          "                });",
+          "                if (updatedError || !updatedResponse || updatedResponse.code !== 200) return;",
+          "",
+          "                pm.sendRequest({ url: itemUrl, method: 'DELETE', header: headers }, function (deleteError, deleteResponse) {",
+          "                    pm.test('DELETE removes the resource', function () {",
+          "                        pm.expect(deleteError).to.eql(null);",
+          "                        if (!deleteError) pm.expect([200, 204]).to.include(deleteResponse.code);",
+          "                    });",
+          "                });",
+          "            });",
+          "        });",
+          "    });",
+          "}"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "contacts-uuid",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman UUID');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman UUID\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-uuid"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-uuid-binary",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman UUID Binary');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman UUID Binary\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-uuid-binary"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-table",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Table');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Table\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-table"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-sequence",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Sequence');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Sequence\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-sequence"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-natural",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Natural');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Natural\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-natural"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-identity",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Identity');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Identity\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-identity"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-composite",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Composite');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete composite contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstname\":\"Postman{{$guid}}\",\"lastname\":\"Composite\",\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Composite\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-composite"
+          }
+        }
+      ]
+    },
+    {
+      "name": "contacts-composite-embedded",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'name');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Embedded Composite');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'name');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete embedded composite contact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"compositeIdEmbedded\":{\"firstname\":\"Postman{{$guid}}\",\"lastname\":\"Embedded\"},\"email\":\"{{$guid}}@example.com\",\"name\":\"Postman Embedded Composite\",\"status\":\"NEW\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/contacts-composite-embedded"
+          }
+        }
+      ]
+    },
+    {
+      "name": "books-table",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'title');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman Test Book');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'title');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete book",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"Postman Test Book\",\"isbn\":\"{{$guid}}\",\"publisher\":\"Postman Test Publisher\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/books-table"
+          }
+        }
+      ]
+    },
+    {
+      "name": "authors-table",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.collectionVariables.set('lifecycleExpectedField', 'firstName');",
+              "pm.collectionVariables.set('lifecycleExpectedValue', 'Postman');",
+              "pm.collectionVariables.set('lifecyclePatchField', 'firstName');",
+              "pm.collectionVariables.set('lifecycleItemUrl', '');"
+            ]
+          }
+        }
+      ],
+      "item": [
+        {
+          "name": "Create, read, update, and delete author",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/hal+json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"firstName\":\"Postman\",\"lastName\":\"{{$guid}}\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/authors-table"
+          }
+        }
+      ]
+    }
+  ]
+}

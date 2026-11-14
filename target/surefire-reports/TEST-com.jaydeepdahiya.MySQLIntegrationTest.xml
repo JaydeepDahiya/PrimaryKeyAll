@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.jaydeepdahiya.MySQLIntegrationTest" time="2.036" tests="8" errors="0" skipped="0" failures="0" flakes="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll\target\test-classes;D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll\target\classes;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\4.1.2\spring-boot-starter-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter\4.1.2\spring-boot-starter-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-logging\4.1.2\spring-boot-starter-logging-4.1.2.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-classic\1.5.38\logback-classic-1.5.38.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-core\1.5.38\logback-core-1.5.38.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.25.5\log4j-to-slf4j-2.25.5.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.5\log4j-api-2.25.5.jar;C:\Users\Admin\.m2\repository\org\slf4j\jul-to-slf4j\2.0.20\jul-to-slf4j-2.0.20.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\4.1.2\spring-boot-autoconfigure-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\annotation\jakarta.annotation-api\3.0.0\jakarta.annotation-api-3.0.0.jar;C:\Users\Admin\.m2\repository\org\yaml\snakeyaml\2.6\snakeyaml-2.6.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\4.1.2\spring-boot-starter-jdbc-4.1.2.jar;C:\Users\Admin\.m2\repository\com\zaxxer\HikariCP\7.0.2\HikariCP-7.0.2.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\2.0.20\slf4j-api-2.0.20.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-jpa\4.1.2\spring-boot-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-commons\4.1.2\spring-boot-data-commons-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-persistence\4.1.2\spring-boot-persistence-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-commons\4.1.2\spring-data-commons-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-hibernate\4.1.2\spring-boot-hibernate-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jpa\4.1.2\spring-boot-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.2.0\jakarta.persistence-api-3.2.0.jar;C:\Users\Admin\.m2\repository\org\hibernate\orm\hibernate-core\7.4.13.Final\hibernate-core-7.4.13.Final.jar;C:\Users\Admin\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Admin\.m2\repository\org\hibernate\models\hibernate-models\1.1.2\hibernate-models-1.1.2.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.9\jaxb-runtime-4.0.9.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.9\jaxb-core-4.0.9.jar;C:\Users\Admin\.m2\repository\org\eclipse\angus\angus-activation\2.0.3\angus-activation-2.0.3.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\txw2\4.0.9\txw2-4.0.9.jar;C:\Users\Admin\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-orm\7.0.10\spring-orm-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jpa\4.1.2\spring-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-context\7.0.10\spring-context-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aop\7.0.10\spring-aop-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-tx\7.0.10\spring-tx-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-beans\7.0.10\spring-beans-7.0.10.jar;C:\Users\Admin\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aspects\7.0.10\spring-aspects-7.0.10.jar;C:\Users\Admin\.m2\repository\org\aspectj\aspectjweaver\1.9.25.1\aspectjweaver-1.9.25.1.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jdbc\4.1.2\spring-boot-jdbc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot\4.1.2\spring-boot-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-sql\4.1.2\spring-boot-sql-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-transaction\4.1.2\spring-boot-transaction-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jdbc\7.0.10\spring-jdbc-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-rest\4.1.2\spring-boot-starter-data-rest-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-webmvc\4.1.2\spring-boot-starter-webmvc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jackson\4.1.2\spring-boot-starter-jackson-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jackson\4.1.2\spring-boot-jackson-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-rest\4.1.2\spring-boot-data-rest-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-rest-webmvc\5.1.2\spring-data-rest-webmvc-5.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-rest-core\5.1.2\spring-data-rest-core-5.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\hateoas\spring-hateoas\3.1.3\spring-hateoas-3.1.3.jar;C:\Users\Admin\.m2\repository\org\springframework\plugin\spring-plugin-core\4.1.0\spring-plugin-core-4.1.0.jar;C:\Users\Admin\.m2\repository\org\atteo\evo-inflector\1.3\evo-inflector-1.3.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-web\4.1.2\spring-boot-starter-web-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\4.1.2\spring-boot-starter-tomcat-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat-runtime\4.1.2\spring-boot-starter-tomcat-runtime-4.1.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\11.0.27\tomcat-embed-core-11.0.27.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\11.0.27\tomcat-embed-websocket-11.0.27.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-tomcat\4.1.2\spring-boot-tomcat-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-http-converter\4.1.2\spring-boot-http-converter-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-web\7.0.10\spring-web-7.0.10.jar;C:\Users\Admin\.m2\repository\io\micrometer\micrometer-observation\1.17.2\micrometer-observation-1.17.2.jar;C:\Users\Admin\.m2\repository\io\micrometer\micrometer-commons\1.17.2\micrometer-commons-1.17.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-webmvc\4.1.2\spring-boot-webmvc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-servlet\4.1.2\spring-boot-servlet-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-webmvc\7.0.10\spring-webmvc-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-expression\7.0.10\spring-expression-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\3.1.1\springdoc-openapi-starter-webmvc-ui-3.1.1.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\3.1.1\springdoc-openapi-starter-webmvc-api-3.1.1.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-common\3.1.1\springdoc-openapi-starter-common-3.1.1.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.55\swagger-core-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.55\swagger-annotations-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.55\swagger-models-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.7\jackson-databind-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.7\jackson-core-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.21.7\jackson-dataformat-yaml-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.21.7\jackson-datatype-jsr310-2.21.7.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.2\spring-boot-web-server-4.1.2.jar;C:\Users\Admin\.m2\repository\org\webjars\swagger-ui\5.32.14\swagger-ui-5.32.14.jar;C:\Users\Admin\.m2\repository\org\webjars\webjars-locator-lite\1.1.5\webjars-locator-lite-1.1.5.jar;C:\Users\Admin\.m2\repository\org\jspecify\jspecify\1.0.1\jspecify-1.0.1.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-flyway\4.1.2\spring-boot-starter-flyway-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-flyway\4.1.2\spring-boot-flyway-4.1.2.jar;C:\Users\Admin\.m2\repository\org\flywaydb\flyway-mysql\12.4.0\flyway-mysql-12.4.0.jar;C:\Users\Admin\.m2\repository\org\flywaydb\flyway-core\12.4.0\flyway-core-12.4.0.jar;C:\Users\Admin\.m2\repository\tools\jackson\core\jackson-databind\3.1.7\jackson-databind-3.1.7.jar;C:\Users\Admin\.m2\repository\tools\jackson\core\jackson-core\3.1.7\jackson-core-3.1.7.jar;C:\Users\Admin\.m2\repository\com\mysql\mysql-connector-j\9.7.0\mysql-connector-j-9.7.0.jar;C:\Users\Admin\.m2\repository\com\h2database\h2\2.4.240\h2-2.4.240.jar;C:\Users\Admin\.m2\repository\org\projectlombok\lombok\1.18.48\lombok-1.18.48.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-validation\4.1.2\spring-boot-starter-validation-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-validation\4.1.2\spring-boot-validation-4.1.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\11.0.27\tomcat-embed-el-11.0.27.jar;C:\Users\Admin\.m2\repository\org\hibernate\validator\hibernate-validator\9.1.5.Final\hibernate-validator-9.1.5.Final.jar;C:\Users\Admin\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.1\jakarta.validation-api-3.1.1.jar;C:\Users\Admin\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\Admin\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa-test\4.1.2\spring-boot-starter-data-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-test\4.1.2\spring-boot-starter-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test\4.1.2\spring-boot-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\4.1.2\spring-boot-test-autoconfigure-4.1.2.jar;C:\Users\Admin\.m2\repository\com\jayway\jsonpath\json-path\2.10.0\json-path-2.10.0.jar;C:\Users\Admin\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\Admin\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\Admin\.m2\repository\net\minidev\json-smart\2.6.0\json-smart-2.6.0.jar;C:\Users\Admin\.m2\repository\net\minidev\accessors-smart\2.6.0\accessors-smart-2.6.0.jar;C:\Users\Admin\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Admin\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy\1.18.15\byte-buddy-1.18.15.jar;C:\Users\Admin\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Admin\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-core\5.23.0\mockito-core-5.23.0.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.15\byte-buddy-agent-1.18.15.jar;C:\Users\Admin\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-junit-jupiter\5.23.0\mockito-junit-jupiter-5.23.0.jar;C:\Users\Admin\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Admin\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-core\7.0.10\spring-core-7.0.10.jar;C:\Users\Admin\.m2\repository\commons-logging\commons-logging\1.3.6\commons-logging-1.3.6.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-test\7.0.10\spring-test-7.0.10.jar;C:\Users\Admin\.m2\repository\org\xmlunit\xmlunit-core\2.11.0\xmlunit-core-2.11.0.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc-test\4.1.2\spring-boot-starter-jdbc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jdbc-test\4.1.2\spring-boot-jdbc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-jpa-test\4.1.2\spring-boot-data-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jpa-test\4.1.2\spring-boot-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-webmvc-test\4.1.2\spring-boot-starter-webmvc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jackson-test\4.1.2\spring-boot-starter-jackson-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-webmvc-test\4.1.2\spring-boot-webmvc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-resttestclient\4.1.2\spring-boot-resttestclient-4.1.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/London"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\latest\bin"/>
+    <property name="sun.java.command" value="C:\Users\Admin\AppData\Local\Temp\surefire3761161388052857796\surefirebooter-20261114022153864_3.jar C:\Users\Admin\AppData\Local\Temp\surefire3761161388052857796 2026-11-14T02-21-53_674-jvmRun1 surefire-20261114022153864_1tmp surefire_0-20261114022153864_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll\target\test-classes;D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll\target\classes;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\4.1.2\spring-boot-starter-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter\4.1.2\spring-boot-starter-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-logging\4.1.2\spring-boot-starter-logging-4.1.2.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-classic\1.5.38\logback-classic-1.5.38.jar;C:\Users\Admin\.m2\repository\ch\qos\logback\logback-core\1.5.38\logback-core-1.5.38.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.25.5\log4j-to-slf4j-2.25.5.jar;C:\Users\Admin\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.5\log4j-api-2.25.5.jar;C:\Users\Admin\.m2\repository\org\slf4j\jul-to-slf4j\2.0.20\jul-to-slf4j-2.0.20.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\4.1.2\spring-boot-autoconfigure-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\annotation\jakarta.annotation-api\3.0.0\jakarta.annotation-api-3.0.0.jar;C:\Users\Admin\.m2\repository\org\yaml\snakeyaml\2.6\snakeyaml-2.6.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\4.1.2\spring-boot-starter-jdbc-4.1.2.jar;C:\Users\Admin\.m2\repository\com\zaxxer\HikariCP\7.0.2\HikariCP-7.0.2.jar;C:\Users\Admin\.m2\repository\org\slf4j\slf4j-api\2.0.20\slf4j-api-2.0.20.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-jpa\4.1.2\spring-boot-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-commons\4.1.2\spring-boot-data-commons-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-persistence\4.1.2\spring-boot-persistence-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-commons\4.1.2\spring-data-commons-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-hibernate\4.1.2\spring-boot-hibernate-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jpa\4.1.2\spring-boot-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.2.0\jakarta.persistence-api-3.2.0.jar;C:\Users\Admin\.m2\repository\org\hibernate\orm\hibernate-core\7.4.13.Final\hibernate-core-7.4.13.Final.jar;C:\Users\Admin\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Admin\.m2\repository\org\hibernate\models\hibernate-models\1.1.2\hibernate-models-1.1.2.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.9\jaxb-runtime-4.0.9.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.9\jaxb-core-4.0.9.jar;C:\Users\Admin\.m2\repository\org\eclipse\angus\angus-activation\2.0.3\angus-activation-2.0.3.jar;C:\Users\Admin\.m2\repository\org\glassfish\jaxb\txw2\4.0.9\txw2-4.0.9.jar;C:\Users\Admin\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Admin\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-orm\7.0.10\spring-orm-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-jpa\4.1.2\spring-data-jpa-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-context\7.0.10\spring-context-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aop\7.0.10\spring-aop-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-tx\7.0.10\spring-tx-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-beans\7.0.10\spring-beans-7.0.10.jar;C:\Users\Admin\.m2\repository\org\antlr\antlr4-runtime\4.13.2\antlr4-runtime-4.13.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-aspects\7.0.10\spring-aspects-7.0.10.jar;C:\Users\Admin\.m2\repository\org\aspectj\aspectjweaver\1.9.25.1\aspectjweaver-1.9.25.1.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jdbc\4.1.2\spring-boot-jdbc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot\4.1.2\spring-boot-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-sql\4.1.2\spring-boot-sql-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-transaction\4.1.2\spring-boot-transaction-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-jdbc\7.0.10\spring-jdbc-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-rest\4.1.2\spring-boot-starter-data-rest-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-webmvc\4.1.2\spring-boot-starter-webmvc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jackson\4.1.2\spring-boot-starter-jackson-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jackson\4.1.2\spring-boot-jackson-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-rest\4.1.2\spring-boot-data-rest-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-rest-webmvc\5.1.2\spring-data-rest-webmvc-5.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\data\spring-data-rest-core\5.1.2\spring-data-rest-core-5.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\hateoas\spring-hateoas\3.1.3\spring-hateoas-3.1.3.jar;C:\Users\Admin\.m2\repository\org\springframework\plugin\spring-plugin-core\4.1.0\spring-plugin-core-4.1.0.jar;C:\Users\Admin\.m2\repository\org\atteo\evo-inflector\1.3\evo-inflector-1.3.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-web\4.1.2\spring-boot-starter-web-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\4.1.2\spring-boot-starter-tomcat-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat-runtime\4.1.2\spring-boot-starter-tomcat-runtime-4.1.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\11.0.27\tomcat-embed-core-11.0.27.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\11.0.27\tomcat-embed-websocket-11.0.27.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-tomcat\4.1.2\spring-boot-tomcat-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-http-converter\4.1.2\spring-boot-http-converter-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-web\7.0.10\spring-web-7.0.10.jar;C:\Users\Admin\.m2\repository\io\micrometer\micrometer-observation\1.17.2\micrometer-observation-1.17.2.jar;C:\Users\Admin\.m2\repository\io\micrometer\micrometer-commons\1.17.2\micrometer-commons-1.17.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-webmvc\4.1.2\spring-boot-webmvc-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-servlet\4.1.2\spring-boot-servlet-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-webmvc\7.0.10\spring-webmvc-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-expression\7.0.10\spring-expression-7.0.10.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\3.1.1\springdoc-openapi-starter-webmvc-ui-3.1.1.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\3.1.1\springdoc-openapi-starter-webmvc-api-3.1.1.jar;C:\Users\Admin\.m2\repository\org\springdoc\springdoc-openapi-starter-common\3.1.1\springdoc-openapi-starter-common-3.1.1.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.55\swagger-core-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.55\swagger-annotations-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.55\swagger-models-jakarta-2.2.55.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.7\jackson-databind-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.7\jackson-core-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.21.7\jackson-dataformat-yaml-2.21.7.jar;C:\Users\Admin\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.21.7\jackson-datatype-jsr310-2.21.7.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.2\spring-boot-web-server-4.1.2.jar;C:\Users\Admin\.m2\repository\org\webjars\swagger-ui\5.32.14\swagger-ui-5.32.14.jar;C:\Users\Admin\.m2\repository\org\webjars\webjars-locator-lite\1.1.5\webjars-locator-lite-1.1.5.jar;C:\Users\Admin\.m2\repository\org\jspecify\jspecify\1.0.1\jspecify-1.0.1.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-flyway\4.1.2\spring-boot-starter-flyway-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-flyway\4.1.2\spring-boot-flyway-4.1.2.jar;C:\Users\Admin\.m2\repository\org\flywaydb\flyway-mysql\12.4.0\flyway-mysql-12.4.0.jar;C:\Users\Admin\.m2\repository\org\flywaydb\flyway-core\12.4.0\flyway-core-12.4.0.jar;C:\Users\Admin\.m2\repository\tools\jackson\core\jackson-databind\3.1.7\jackson-databind-3.1.7.jar;C:\Users\Admin\.m2\repository\tools\jackson\core\jackson-core\3.1.7\jackson-core-3.1.7.jar;C:\Users\Admin\.m2\repository\com\mysql\mysql-connector-j\9.7.0\mysql-connector-j-9.7.0.jar;C:\Users\Admin\.m2\repository\com\h2database\h2\2.4.240\h2-2.4.240.jar;C:\Users\Admin\.m2\repository\org\projectlombok\lombok\1.18.48\lombok-1.18.48.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-validation\4.1.2\spring-boot-starter-validation-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-validation\4.1.2\spring-boot-validation-4.1.2.jar;C:\Users\Admin\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\11.0.27\tomcat-embed-el-11.0.27.jar;C:\Users\Admin\.m2\repository\org\hibernate\validator\hibernate-validator\9.1.5.Final\hibernate-validator-9.1.5.Final.jar;C:\Users\Admin\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.1\jakarta.validation-api-3.1.1.jar;C:\Users\Admin\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\Admin\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa-test\4.1.2\spring-boot-starter-data-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-test\4.1.2\spring-boot-starter-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test\4.1.2\spring-boot-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\4.1.2\spring-boot-test-autoconfigure-4.1.2.jar;C:\Users\Admin\.m2\repository\com\jayway\jsonpath\json-path\2.10.0\json-path-2.10.0.jar;C:\Users\Admin\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\Admin\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\Admin\.m2\repository\net\minidev\json-smart\2.6.0\json-smart-2.6.0.jar;C:\Users\Admin\.m2\repository\net\minidev\accessors-smart\2.6.0\accessors-smart-2.6.0.jar;C:\Users\Admin\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\Admin\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy\1.18.15\byte-buddy-1.18.15.jar;C:\Users\Admin\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\Admin\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\Admin\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\Admin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\Admin\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-core\5.23.0\mockito-core-5.23.0.jar;C:\Users\Admin\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.15\byte-buddy-agent-1.18.15.jar;C:\Users\Admin\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Admin\.m2\repository\org\mockito\mockito-junit-jupiter\5.23.0\mockito-junit-jupiter-5.23.0.jar;C:\Users\Admin\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\Admin\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-core\7.0.10\spring-core-7.0.10.jar;C:\Users\Admin\.m2\repository\commons-logging\commons-logging\1.3.6\commons-logging-1.3.6.jar;C:\Users\Admin\.m2\repository\org\springframework\spring-test\7.0.10\spring-test-7.0.10.jar;C:\Users\Admin\.m2\repository\org\xmlunit\xmlunit-core\2.11.0\xmlunit-core-2.11.0.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc-test\4.1.2\spring-boot-starter-jdbc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jdbc-test\4.1.2\spring-boot-jdbc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-data-jpa-test\4.1.2\spring-boot-data-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-jpa-test\4.1.2\spring-boot-jpa-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-webmvc-test\4.1.2\spring-boot-starter-webmvc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-starter-jackson-test\4.1.2\spring-boot-starter-jackson-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-webmvc-test\4.1.2\spring-boot-webmvc-test-4.1.2.jar;C:\Users\Admin\.m2\repository\org\springframework\boot\spring-boot-resttestclient\4.1.2\spring-boot-resttestclient-4.1.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Admin"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-08-18"/>
+    <property name="java.home" value="C:\Program Files\Java\latest"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll"/>
+    <property name="style.color" value="always"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\Admin\AppData\Local\Temp\surefire3761161388052857796\surefirebooter-20261114022153864_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.4.1+1-LTS-5"/>
+    <property name="user.name" value="Admin"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="maven.ext.class.path" value="D:\Installed\JetBrains\IntelliJ IDEA 2026.1.3\plugins\maven-plugin\lib\intellij.maven.rt\maven-event-listener.jar"/>
+    <property name="localRepository" value="C:\Users\Admin\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Admin\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2026.3"/>
+    <property name="com.zaxxer.hikari.pool_number" value="3"/>
+    <property name="java.version" value="25.0.4.1"/>
+    <property name="user.dir" value="D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="26140"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="C:\Program Files\Java\latest\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-25.0.4.1\bin;D:\Installed\Gradle\gradle-9.8.0\bin;D:\Installed\Maven\apache-maven-3.9.11\bin;D:\Installed\OpenSSL-Win64\bin;D:\Installed\Jenkins;D:\Installed\nvm;D:\Installed\nodejs;C:\Program Files\SourceGear\Common\DiffMerge\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;D:\Installed\nodejs\;C:\Program Files\Docker\Docker\resources\bin;D:\Installed\Git\cmd;D:\Installed\Python\Python313\Scripts\;D:\Installed\Python\Python313\;D:\Installed\Python\Python39\Scripts\;D:\Installed\Python\Python39\;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;D:\Installed\Microsoft VS Code\bin;D:\Installed\nvm;D:\Installed\nodejs;C:\Users\Admin\AppData\Local\GitHubDesktop\bin;C:\Users\Admin\AppData\Roaming\npm;D:\Installed\Microsoft VS Code\bin\copilot-shim;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.0.4.1+1-LTS-5"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="C:\Users\Admin\.m2\repository"/>
+    <property name="java.class.version" value="69.0"/>
+    <property name="CONSOLE_LOG_PATTERN" value="%green(%d{yyyy-MM-dd HH:mm:ss}) %blue(%-5level) %red([%thread]) %yellow(%logger) - %cyan(%msg%n)"/>
+  </properties>
+  <testcase name="tableTest" classname="MySQLTest" time="0.161">
+    <system-out><![CDATA[&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.test.context.support.AnnotationConfigContextLoaderUtils&amp#27;[0;39m - &amp#27;[36mCould not detect default configuration classes for test class [com.jaydeepdahiya.MySQLIntegrationTest]: MySQLIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.boot.test.context.SpringBootTestContextBootstrapper&amp#27;[0;39m - &amp#27;[36mFound @SpringBootConfiguration com.jaydeepdahiya.PrimaryKeyAllApplication for test class com.jaydeepdahiya.MySQLIntegrationTest
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.test.context.support.AnnotationConfigContextLoaderUtils&amp#27;[0;39m - &amp#27;[36mCould not detect default configuration classes for test class [com.jaydeepdahiya.MySQLIntegrationTest]: MySQLIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.test.context.support.AnnotationConfigContextLoaderUtils&amp#27;[0;39m - &amp#27;[36mCould not detect default configuration classes for test class [com.jaydeepdahiya.CommonDatasourceTests]: CommonDatasourceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.boot.test.context.SpringBootTestContextBootstrapper&amp#27;[0;39m - &amp#27;[36mFound @SpringBootConfiguration com.jaydeepdahiya.PrimaryKeyAllApplication for test class com.jaydeepdahiya.MySQLIntegrationTest
+&amp#27;[0;39m
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.jaydeepdahiya.MySQLIntegrationTest&amp#27;[0;39m - &amp#27;[36mStarting MySQLIntegrationTest using Java 25.0.4.1 with PID 26140 (started by Admin in D:\Intellij_workspace\My Spring Samples\Hibernate\PrimaryKeyAll)
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.jaydeepdahiya.MySQLIntegrationTest&amp#27;[0;39m - &amp#27;[36mThe following 1 profile is active: "prod"
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate&amp#27;[0;39m - &amp#27;[36mBootstrapping Spring Data JPA repositories in DEFAULT mode.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.data.repository.config.RepositoryConfigurationDelegate&amp#27;[0;39m - &amp#27;[36mFinished Spring Data repository scanning in 37 ms. Found 10 JPA repository interfaces.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.flywaydb.core.FlywayExecutor&amp#27;[0;39m - &amp#27;[36mDatabase: jdbc:mysql://localhost:3306/mysqldatabase?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC (MySQL 9.7)
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:09&amp#27;[0;39m &amp#27;[34mWARN &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.flywaydb.core.internal.database.base.Database&amp#27;[0;39m - &amp#27;[36mUsing MySQL 9.7 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 9.4.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.flywaydb.core.internal.command.DbValidate&amp#27;[0;39m - &amp#27;[36mSuccessfully validated 2 migrations (execution time 00:00.019s)
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.flywaydb.core.internal.command.DbMigrate&amp#27;[0;39m - &amp#27;[36mCurrent version of schema `mysqldatabase`: 1.1
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.flywaydb.core.internal.command.DbMigrate&amp#27;[0;39m - &amp#27;[36mSchema `mysqldatabase` is up to date. No migration necessary.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jpa&amp#27;[0;39m - &amp#27;[36mHHH008540: Processing PersistenceUnitInfo [name: default]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo&amp#27;[0;39m - &amp#27;[36mNo LoadTimeWeaver setup: ignoring JPA class transformer
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.zaxxer.hikari.HikariDataSource&amp#27;[0;39m - &amp#27;[36mHikariPool-3 - Starting...
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.zaxxer.hikari.pool.HikariPool&amp#27;[0;39m - &amp#27;[36mHikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@328b60fb
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.zaxxer.hikari.HikariDataSource&amp#27;[0;39m - &amp#27;[36mHikariPool-3 - Start completed.
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.connections.pooling&amp#27;[0;39m - &amp#27;[36mHHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/mysqldatabase?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.7.1
+	Default catalog/schema: mysqldatabase/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.core&amp#27;[0;39m - &amp#27;[36mHHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&amp#27;[0;39m - &amp#27;[36mInitialized JPA EntityManagerFactory for persistence unit 'default'
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mINFO &amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33mcom.jaydeepdahiya.MySQLIntegrationTest&amp#27;[0;39m - &amp#27;[36mStarted MySQLIntegrationTest in 1.54 seconds (process running for 16.489)
+&amp#27;[0;39mHibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    select
+        seq_value 
+    from
+        common_seq 
+    where
+        seq_name=? 
+    for
+        update
+Hibernate: 
+    update
+        common_seq 
+    set
+        seq_value=?  
+    where
+        seq_value=? 
+        and seq_name=?
+Hibernate: 
+    insert 
+    into
+        authors_table
+        (first_name, last_name, id) 
+    values
+        (?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        authors_table
+        (first_name, last_name, id) 
+    values
+        (?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [Jane]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        books_table
+        (isbn, publisher, title, id) 
+    values
+        (?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [Some ISBN]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [My Publisher]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [My First Book]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        books_table
+        (isbn, publisher, title, id) 
+    values
+        (?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [Another ISBN]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [My Publisher]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [My Second Book]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        contacts_table
+        (created_at, created_by, email, message, name, status, subject, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.692390Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        contacts_table
+        (created_at, created_by, email, message, name, status, subject, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.701387Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [jane_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing another technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [Jane Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Another technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    select
+        at1_0.id,
+        at1_0.first_name,
+        at1_0.last_name 
+    from
+        authors_table at1_0
+Hibernate: 
+    select
+        bt1_0.id,
+        bt1_0.isbn,
+        bt1_0.publisher,
+        bt1_0.title 
+    from
+        books_table bt1_0
+Hibernate: 
+    select
+        ct1_0.id,
+        ct1_0.created_at,
+        ct1_0.created_by,
+        ct1_0.email,
+        ct1_0.message,
+        ct1_0.name,
+        ct1_0.status,
+        ct1_0.subject,
+        ct1_0.updated_at,
+        ct1_0.updated_by,
+        ct1_0.user_type 
+    from
+        contacts_table ct1_0
+Hibernate: 
+    update
+        contacts_table 
+    set
+        email=?,
+        message=?,
+        name=?,
+        status=?,
+        subject=?,
+        updated_at=?,
+        updated_by=?,
+        user_type=? 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [Updated technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.720388Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        authors_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        authors_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        books_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        books_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        contacts_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    delete 
+    from
+        contacts_table 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [3]
+&amp#27;[0;39mHibernate: 
+    select
+        at1_0.id,
+        at1_0.first_name,
+        at1_0.last_name 
+    from
+        authors_table at1_0
+Hibernate: 
+    select
+        bt1_0.id,
+        bt1_0.isbn,
+        bt1_0.publisher,
+        bt1_0.title 
+    from
+        books_table bt1_0
+Hibernate: 
+    select
+        ct1_0.id,
+        ct1_0.created_at,
+        ct1_0.created_by,
+        ct1_0.email,
+        ct1_0.message,
+        ct1_0.name,
+        ct1_0.status,
+        ct1_0.subject,
+        ct1_0.updated_at,
+        ct1_0.updated_by,
+        ct1_0.user_type 
+    from
+        contacts_table ct1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactNaturalTest" classname="MySQLTest" time="0.052">
+    <system-out><![CDATA[Hibernate: 
+    select
+        cn1_0.email,
+        cn1_0.created_at,
+        cn1_0.created_by,
+        cn1_0.message,
+        cn1_0.name,
+        cn1_0.status,
+        cn1_0.subject,
+        cn1_0.updated_at,
+        cn1_0.updated_by,
+        cn1_0.user_type 
+    from
+        contacts_natural cn1_0 
+    where
+        cn1_0.email=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        contacts_natural
+        (created_at, created_by, message, name, status, subject, user_type, email) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.803386Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39mHibernate: 
+    select
+        cn1_0.email,
+        cn1_0.created_at,
+        cn1_0.created_by,
+        cn1_0.message,
+        cn1_0.name,
+        cn1_0.status,
+        cn1_0.subject,
+        cn1_0.updated_at,
+        cn1_0.updated_by,
+        cn1_0.user_type 
+    from
+        contacts_natural cn1_0
+Hibernate: 
+    delete 
+    from
+        contacts_natural 
+    where
+        email=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39mHibernate: 
+    select
+        cn1_0.email,
+        cn1_0.created_at,
+        cn1_0.created_by,
+        cn1_0.message,
+        cn1_0.name,
+        cn1_0.status,
+        cn1_0.subject,
+        cn1_0.updated_at,
+        cn1_0.updated_by,
+        cn1_0.user_type 
+    from
+        contacts_natural cn1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactCompositeTest" classname="MySQLTest" time="0.037">
+    <system-out><![CDATA[Hibernate: 
+    select
+        cc1_0.firstname,
+        cc1_0.lastname,
+        cc1_0.created_at,
+        cc1_0.created_by,
+        cc1_0.email,
+        cc1_0.message,
+        cc1_0.name,
+        cc1_0.status,
+        cc1_0.subject,
+        cc1_0.updated_at,
+        cc1_0.updated_by,
+        cc1_0.user_type 
+    from
+        contacts_composite cc1_0 
+    where
+        (
+            cc1_0.firstname, cc1_0.lastname
+        ) in ((?, ?))
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        contacts_composite
+        (created_at, created_by, email, message, name, status, subject, user_type, firstname, lastname) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.852387Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (10:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    select
+        cc1_0.firstname,
+        cc1_0.lastname,
+        cc1_0.created_at,
+        cc1_0.created_by,
+        cc1_0.email,
+        cc1_0.message,
+        cc1_0.name,
+        cc1_0.status,
+        cc1_0.subject,
+        cc1_0.updated_at,
+        cc1_0.updated_by,
+        cc1_0.user_type 
+    from
+        contacts_composite cc1_0
+Hibernate: 
+    delete 
+    from
+        contacts_composite 
+    where
+        firstname=? 
+        and lastname=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    select
+        cc1_0.firstname,
+        cc1_0.lastname,
+        cc1_0.created_at,
+        cc1_0.created_by,
+        cc1_0.email,
+        cc1_0.message,
+        cc1_0.name,
+        cc1_0.status,
+        cc1_0.subject,
+        cc1_0.updated_at,
+        cc1_0.updated_by,
+        cc1_0.user_type 
+    from
+        contacts_composite cc1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactIdentityTest" classname="MySQLTest" time="0.028">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        contacts_identity
+        (created_at, created_by, email, message, name, status, subject, user_type) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.883387Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39mHibernate: 
+    select
+        ci1_0.id,
+        ci1_0.created_at,
+        ci1_0.created_by,
+        ci1_0.email,
+        ci1_0.message,
+        ci1_0.name,
+        ci1_0.status,
+        ci1_0.subject,
+        ci1_0.updated_at,
+        ci1_0.updated_by,
+        ci1_0.user_type 
+    from
+        contacts_identity ci1_0
+Hibernate: 
+    delete 
+    from
+        contacts_identity 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    select
+        ci1_0.id,
+        ci1_0.created_at,
+        ci1_0.created_by,
+        ci1_0.email,
+        ci1_0.message,
+        ci1_0.name,
+        ci1_0.status,
+        ci1_0.subject,
+        ci1_0.updated_at,
+        ci1_0.updated_by,
+        ci1_0.user_type 
+    from
+        contacts_identity ci1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactCompositeEmbeddedTest" classname="MySQLTest" time="0.026">
+    <system-out><![CDATA[Hibernate: 
+    select
+        cce1_0.firstname,
+        cce1_0.lastname,
+        cce1_0.created_at,
+        cce1_0.created_by,
+        cce1_0.email,
+        cce1_0.message,
+        cce1_0.name,
+        cce1_0.status,
+        cce1_0.subject,
+        cce1_0.updated_at,
+        cce1_0.updated_by,
+        cce1_0.user_type 
+    from
+        contacts_composite_embedded cce1_0 
+    where
+        (
+            cce1_0.firstname, cce1_0.lastname
+        ) in ((?, ?))
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    insert 
+    into
+        contacts_composite_embedded
+        (created_at, created_by, email, message, name, status, subject, user_type, firstname, lastname) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.919386Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (10:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    select
+        cce1_0.firstname,
+        cce1_0.lastname,
+        cce1_0.created_at,
+        cce1_0.created_by,
+        cce1_0.email,
+        cce1_0.message,
+        cce1_0.name,
+        cce1_0.status,
+        cce1_0.subject,
+        cce1_0.updated_at,
+        cce1_0.updated_by,
+        cce1_0.user_type 
+    from
+        contacts_composite_embedded cce1_0
+Hibernate: 
+    delete 
+    from
+        contacts_composite_embedded 
+    where
+        firstname=? 
+        and lastname=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [John]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Doe]
+&amp#27;[0;39mHibernate: 
+    select
+        cce1_0.firstname,
+        cce1_0.lastname,
+        cce1_0.created_at,
+        cce1_0.created_by,
+        cce1_0.email,
+        cce1_0.message,
+        cce1_0.name,
+        cce1_0.status,
+        cce1_0.subject,
+        cce1_0.updated_at,
+        cce1_0.updated_by,
+        cce1_0.user_type 
+    from
+        contacts_composite_embedded cce1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactUUIDTest" classname="MySQLTest" time="0.021">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        contacts_uuid
+        (created_at, created_by, email, message, name, status, subject, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.943901Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:VARCHAR) <- [e2b418ba-b802-4f63-8c2e-eafb5cd6b856]
+&amp#27;[0;39mHibernate: 
+    select
+        cu1_0.id,
+        cu1_0.created_at,
+        cu1_0.created_by,
+        cu1_0.email,
+        cu1_0.message,
+        cu1_0.name,
+        cu1_0.status,
+        cu1_0.subject,
+        cu1_0.updated_at,
+        cu1_0.updated_by,
+        cu1_0.user_type 
+    from
+        contacts_uuid cu1_0
+Hibernate: 
+    delete 
+    from
+        contacts_uuid 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:VARCHAR) <- [e2b418ba-b802-4f63-8c2e-eafb5cd6b856]
+&amp#27;[0;39mHibernate: 
+    select
+        cu1_0.id,
+        cu1_0.created_at,
+        cu1_0.created_by,
+        cu1_0.email,
+        cu1_0.message,
+        cu1_0.name,
+        cu1_0.status,
+        cu1_0.subject,
+        cu1_0.updated_at,
+        cu1_0.updated_by,
+        cu1_0.user_type 
+    from
+        contacts_uuid cu1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactUUIDBinaryTest" classname="MySQLTest" time="0.025">
+    <system-out><![CDATA[Hibernate: 
+    insert 
+    into
+        contacts_uuid_binary
+        (created_at, created_by, email, message, name, status, subject, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:10.967900Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:UUID) <- [54b53f3d-7b56-460f-949c-bbe2ee0ef5f2]
+&amp#27;[0;39mHibernate: 
+    select
+        cu1_0.id,
+        cu1_0.created_at,
+        cu1_0.created_by,
+        cu1_0.email,
+        cu1_0.message,
+        cu1_0.name,
+        cu1_0.status,
+        cu1_0.subject,
+        cu1_0.updated_at,
+        cu1_0.updated_by,
+        cu1_0.user_type 
+    from
+        contacts_uuid_binary cu1_0
+Hibernate: 
+    delete 
+    from
+        contacts_uuid_binary 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:10&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:UUID) <- [54b53f3d-7b56-460f-949c-bbe2ee0ef5f2]
+&amp#27;[0;39mHibernate: 
+    select
+        cu1_0.id,
+        cu1_0.created_at,
+        cu1_0.created_by,
+        cu1_0.email,
+        cu1_0.message,
+        cu1_0.name,
+        cu1_0.status,
+        cu1_0.subject,
+        cu1_0.updated_at,
+        cu1_0.updated_by,
+        cu1_0.user_type 
+    from
+        contacts_uuid_binary cu1_0
+]]></system-out>
+  </testcase>
+  <testcase name="contactSequenceTableTest" classname="MySQLTest" time="0.041">
+    <system-out><![CDATA[Hibernate: 
+    select
+        next_val as id_val 
+    from
+        contacts_sequence_seq 
+    for
+        update
+Hibernate: 
+    update
+        contacts_sequence_seq 
+    set
+        next_val= ? 
+    where
+        next_val=?
+Hibernate: 
+    insert 
+    into
+        contacts_sequence
+        (created_at, created_by, email, message, name, status, subject, user_type, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:TIMESTAMP_UTC) <- [2026-11-14T02:22:11.009908Z]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (2:VARCHAR) <- [Admin]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (3:VARCHAR) <- [john_doe@gmail.com]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (4:CLOB) <- [Facing technical problem while uploading Resume]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (5:VARCHAR) <- [John Doe]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (6:VARCHAR) <- [NEW]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (7:VARCHAR) <- [Facing technical problem]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (8:VARCHAR) <- [Job Seeker]
+&amp#27;[0;39m&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (9:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    select
+        cs1_0.id,
+        cs1_0.created_at,
+        cs1_0.created_by,
+        cs1_0.email,
+        cs1_0.message,
+        cs1_0.name,
+        cs1_0.status,
+        cs1_0.subject,
+        cs1_0.updated_at,
+        cs1_0.updated_by,
+        cs1_0.user_type 
+    from
+        contacts_sequence cs1_0
+Hibernate: 
+    delete 
+    from
+        contacts_sequence 
+    where
+        id=?
+&amp#27;[32m2026-11-14 02:22:11&amp#27;[0;39m &amp#27;[34mTRACE&amp#27;[0;39m &amp#27;[31m[main]&amp#27;[0;39m &amp#27;[33morg.hibernate.orm.jdbc.bind&amp#27;[0;39m - &amp#27;[36mbinding parameter (1:BIGINT) <- [2]
+&amp#27;[0;39mHibernate: 
+    select
+        cs1_0.id,
+        cs1_0.created_at,
+        cs1_0.created_by,
+        cs1_0.email,
+        cs1_0.message,
+        cs1_0.name,
+        cs1_0.status,
+        cs1_0.subject,
+        cs1_0.updated_at,
+        cs1_0.updated_by,
+        cs1_0.user_type 
+    from
+        contacts_sequence cs1_0
+]]></system-out>
+  </testcase>
+</testsuite>
