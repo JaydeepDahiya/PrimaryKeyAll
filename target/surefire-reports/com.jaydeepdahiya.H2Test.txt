@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.jaydeepdahiya.H2Test
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.311 s -- in com.jaydeepdahiya.H2Test

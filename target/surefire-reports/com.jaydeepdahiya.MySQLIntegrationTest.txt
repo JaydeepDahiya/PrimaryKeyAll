@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.jaydeepdahiya.MySQLIntegrationTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.036 s -- in com.jaydeepdahiya.MySQLIntegrationTest
